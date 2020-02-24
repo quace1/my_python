@@ -1,0 +1,51 @@
+film = str(input('Выберите фильм\n'))
+date = str(input('Выберите дату\n'))
+time = int(input('Выберите время\n'))
+n = int(input('Укажите количество билетов\n'))
+
+price = 0
+
+if film != 'Паразиты' and film != '1917' and film != 'Соник в кино':
+    film = 'ошибка'
+
+if date != 'сегодня' and date != 'завтра':
+    date = 'ошибка'
+
+if film == 'Паразиты':
+    if time == 12:
+        price = 250
+    elif time == 16:
+        price = 350
+    elif time == 20:
+        price = 450
+    else:
+        time = 0
+
+
+if film == '1917':
+    if time == 10:
+        price = 250
+    elif time == 13:
+        price = 350
+    elif time == 16:
+        price = 350
+    else:
+        time = 0
+
+if film == 'Соник в кино':
+    if time == 10:
+        price = 350
+    elif time == 14 or time == 18:
+        price = 450
+    else:
+        time = 0
+
+if n <= 0:
+    n = -1
+
+if film != 'ошибка' and date != 'ошибка' and time != 0 and n != -1:
+    print('Вы хотите пойти в кино', date, 'в', time, ': 00', 'на фильм', film)
+    print('Вам нужно', n, 'билетов')
+    print('К оплате:', n * price, 'рублей')
+else:
+    print('Введенные вами данные некорректны')
