@@ -1,0 +1,18 @@
+s = "У лукоморья 123 дуб зеленый 456"
+
+if s.find('я') != -1:
+    print('Встречается')
+    print(s.find('я'))
+else:
+    print('Не встречается')
+
+print(s.count('у'))
+
+if not s.isalpha():
+    print(s.upper())
+
+if len(s) > 4:
+    print(s.lower())
+
+s = 'O' + s[1:]
+print(s)

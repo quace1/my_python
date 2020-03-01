@@ -1,0 +1,9 @@
+s1 = str(input())
+
+def str_n(s, n):
+    if len(s) > n:
+        return s.upper()
+    else:
+        return s.lower()
+
+print(str_n(s1, 4))

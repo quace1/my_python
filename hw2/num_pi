@@ -1,0 +1,8 @@
+import math
+
+n = int(input())
+
+def num_pi(x : int):
+    return f'{math.pi:.{x}f}'
+
+print(num_pi(n))
