@@ -1,0 +1,25 @@
+import random
+
+ans = random.randint(1, 100)
+print('Компьютер загадал число')
+trys = random.randint(1, 10)
+print('У вас', trys, 'попытки')
+
+
+while trys > 0:
+    x = input('Попробуйте угадать')
+    if x == 'выход':
+        break
+    else:
+        if x == ans:
+            break
+            print('Победа!')
+        elif x > ans:
+            print('Попробуйте число меньше')
+        else:
+            print('Попробуйте число больше')
+    trys -= 1
+
+if trys == 0:
+    print('Game over!')
+    print('Число:', ans)

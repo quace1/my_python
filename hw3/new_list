@@ -1,0 +1,15 @@
+import math
+
+nums = [1, 4, 9, 16, 25]
+
+my_list = []
+for i in nums:
+    my_list.append(math.sqrt(i))
+
+
+my_list_1 = []
+my_list_1 = map(math.sqrt, nums)
+
+
+my_list_2 = [math.sqrt(i) for i in nums]
+

@@ -1,0 +1,11 @@
+count = 0
+while 1 == 1:
+    n = input()
+    if n == 'стоп':
+        print(count)
+        break
+    elif isinstance(n, int):
+        count += n
+    else:
+        print('ошибка ввода')
+

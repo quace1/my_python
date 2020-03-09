@@ -1,0 +1,12 @@
+n = int(input())
+
+cnt = 0
+i = 0
+
+while n > 0:
+    if i % 2 == 1:
+        cnt += (n % 10) * (n % 10)
+    n = n // 10
+    i += 1
+
+print(cnt)
