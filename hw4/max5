@@ -1,0 +1,21 @@
+def max_sequence(seq):
+    sum = 0
+    maxsum = -1
+    res = {1, 2, 3, 4, 5}
+    for i in range(0, 5):
+        sum += seq[i]
+    for j in range(5, len(seq)):
+        sum += seq[j]
+        sum -= seq[j-5]
+        if sum > maxsum:
+            maxsum = sum
+            res[4] = seq[j]
+            res[3] = seq[j-1]
+            res[2] = seq[j-2]
+            res[1] = seq[j-3]
+            res[0] = seq[j-4]
+    return res
+
+if __name__ == '__main__':
+    import doctest
+    doctest.testmod()
