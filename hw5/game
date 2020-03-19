@@ -1,0 +1,60 @@
+import random
+items_x = []
+items_y = []
+for i in range(0, 30):
+    items_x.append(random.randint(-100, 100))
+    items_y.append(random.randint(-100, 100))
+
+class Game:
+    def __init__(self, x, y, ms):
+        self.x = x
+        self.y = y
+        self.move_speed = ms
+        self.weapon_type = "normal"
+
+    def move(self, delta_x, delta_y):
+        self.x = self.x + delta_x
+        self.y = self.y + delta_y
+        for i in range(0, 30):
+            if self.x == items_x[i] and self.y == items_y[i]:
+                chance = random.randint(1, 10)
+                if chance <= 4:
+                   self.move_speed /= 2
+                elif chance <= 9:
+                    self.move_speed *= 2
+                else:
+                    self.weapon_type = "upgraded"
+
+    def shoot(self, target):
+        chance = random.randint(1, 10)
+        if target == 'character1':
+            luck = character1.move_speed // 10
+        elif target == 'character2':
+            luck = character2.move_speed // 10
+        else:
+            luck = character3.move_speed // 10
+        if self.weapon_type == "normal":
+            if chance >= 5 + luck:
+                print('Персонаж', target, 'убит')
+            else:
+                print('Вы промахнулись')
+        elif chance >= 2 + luck:
+            print('Персонаж', target, 'убит')
+        else:
+            print('Вы промахнулись')
+
+
+
+    def get_point(self):
+        print(f'координата x={self.x}, координата y={self.y}')
+
+character1 = Game(0, 0, 10)
+
+character2 = Game(5, 5, 20)
+
+character3 = Game(-5, -5, 30)
+
+def info(obj):
+    for i in obj.__dict__:
+        print(f'{i} : {obj.__dict__[i]}')
+
