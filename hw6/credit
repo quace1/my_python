@@ -1,0 +1,23 @@
+file = open('sber.txt', 'r')
+a = []
+for line in file:
+    if line.startswith('Количество заявок на потребительские кредиты'):
+        a.append(line)
+file.close()
+
+for i in range(len(a)):
+    a[i] = a[i].split()
+d = {}
+for i in range(len(a)):
+    if a[i][2] in d:
+        d[a[i][2]] += a[i][4]
+    else:
+        d[a[i][2]] = a[i][4]
+ans_key = 'abc'
+ans_val = 0
+for key in d:
+    if d[key] > ans_val:
+        ans_val = d[key]
+        ans_key = key
+
+print(ans_key)

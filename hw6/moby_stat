@@ -1,0 +1,16 @@
+file = open('moby_clean.txt', 'r')
+d = {}
+for line in file:
+    if d.get(line, 'null') == 'null':
+        d[line] = 1
+    else:
+        d[line] += 1
+
+file.close()
+
+a = list(d.items())
+a.sort(key = lambda i : i[1])
+for i in range(0, 5):
+    print(a[i])
+for i in range(len(a)-5, len(a)):
+    print(a[i])

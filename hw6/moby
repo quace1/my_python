@@ -1,0 +1,23 @@
+file = open('moby.txt', 'r')
+
+lines = file.readlines()
+for i in range(0, len(lines)):
+    lines[i] = lines[i].lower()
+    lines[i] = lines[i].replace('.', ' ')
+    lines[i] = lines[i].replace(',', ' ')
+    lines[i] = lines[i].replace('-', ' ')
+    lines[i] = lines[i].replace(';', ' ')
+file.close()
+
+save = open('moby.txt', 'w')
+save.writelines(lines)
+save.close()
+
+for i in range(0, len(lines)):
+    lines[i] = lines[i].split()
+
+f = open('moby_clean.txt', 'w')
+for i in range(0, len(lines)):
+    for j in range(0, len(lines[i])):
+        f.write(lines[i][j] + '\n')
+f.close()

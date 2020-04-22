@@ -1,0 +1,15 @@
+a = int(input())
+b = int(input())
+
+op = input()
+
+if op == "умножить":
+    print(a*b)
+elif op == "разделить":
+    print(a/b)
+elif op == "сложить":
+    print(a+b)
+elif op == "вычесть":
+    print(a-b)
+else:
+    print("Некорректный оператор")

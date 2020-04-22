@@ -1,0 +1,13 @@
+def numbering(in_file, out_file):
+    file = open(in_file, 'r')
+    lines = file.readlines()
+    for i in range(len(lines)):
+        s = str(i+1)
+        lines[i] = s + ' ' + lines[i]
+    file.close()
+    f = open(out_file, 'w')
+    for i in range(len(lines)):
+        f.write(lines[i] + '\n')
+    f.close()
+
+numbering('text.txt', 'new_text.txt')

@@ -1,0 +1,12 @@
+import random
+file = open('text.txt', 'r')
+lines = file.readlines()
+file.close()
+
+while True:
+    s = str(input('Задайте вопрос. Если хотите выйти, напишите: "выйти"'))
+    if s == 'выйти':
+        break
+    else:
+        n = random.randint(0, len(lines)-1)
+        print(lines[n])
